@@ -2,3 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+.btn-pick{
+    @apply h-12 border-gray-900 border-2 rounded-md text-xl font-medium text-gray-900
+    hover:bg-gray-900 hover:text-gray-100 transition-colors duration-200;
+}
