@@ -1,3 +1,3 @@
-# My Watch Collection
+# Watches Collection
 
-## This is my project [Live Site Link](http://localhost:3000/).
+## Project [Live Site Link](http://localhost:3000/)
