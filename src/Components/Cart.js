@@ -10,14 +10,14 @@ const Cart = ({items,setItems}) => {
             const randomIndex = Math.floor(Math.random() * items.length) + 1;
             setRandom(items[randomIndex-1]);
             randomItem.classList.remove('hidden');
-            randomItem.classList.add('flex');
+            randomItem.classList.add('block');
         }
     };
 
     const clearSelection = ()=> {
         setItems([]);
         setRandom({});
-        randomItem.classList.remove('flex');
+        randomItem.classList.remove('block');
         randomItem.classList.add('hidden');
     }
 
@@ -30,10 +30,10 @@ const Cart = ({items,setItems}) => {
                         items.map((item,index)=> <CartItem item={item} index={index} key={item.id}></CartItem>)
                     }
                 </div>
-                <div className='h-24 rounded-md shadow-md'>
+                <div className='h-24 rounded-md shadow-md hidden' id='random-item'>
                     <h4 className='text-center text-lg font-medium underline mb-2'>Randomly Picked Watch :</h4>
-                    <div className='h-12 px-4 items-center gap-4 rounded-lg bg-gray-900 hidden' id='random-item'>
-                    <h5 className='font-medium text-lg text-white'>{items.indexOf(random)+1}.</h5>
+                    <div className='h-12 px-4 flex items-center gap-4 rounded-lg bg-gray-900' >
+                        <h5 className='font-medium text-lg text-white'>{items.indexOf(random)+1}.</h5>
                         <img className='max-w-[32px] max-h-8 rounded-full' src={random.image} alt="" />
                         <h5 className='font-medium text-lg text-white'>{random.name}</h5>
                     </div>

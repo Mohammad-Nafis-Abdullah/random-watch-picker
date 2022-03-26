@@ -1,4 +1,5 @@
 import React from 'react';
+import QandA from './QandA';
 import WatchCard from './WatchCard';
 
 const Watches = ({watches,picker}) => {
@@ -7,6 +8,7 @@ const Watches = ({watches,picker}) => {
             {
                 watches.map(watch => <WatchCard watch={watch} key={watch.id} picker={picker}></WatchCard>)
             }
+            <QandA></QandA>
         </div>
     );
 };
