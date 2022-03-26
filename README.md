@@ -1,3 +1,3 @@
 # Watches Collection
 
-## Project [Live Site Link](http://localhost:3000/)
+## Project [Live Site Link](https://watches-collection.netlify.app/)

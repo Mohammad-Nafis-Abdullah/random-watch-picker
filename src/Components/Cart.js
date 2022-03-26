@@ -3,22 +3,22 @@ import CartItem from './CartItem';
 
 const Cart = ({items,setItems}) => {
     const [random,setRandom] = useState({});
-    const randomItemClasses = document.getElementById('random-item').classList;
+    const randomItem = document.getElementById('random-item');
 
     const randomPicker = ()=> {
         if (items.length) {
             const randomIndex = Math.floor(Math.random() * items.length) + 1;
             setRandom(items[randomIndex-1]);
-            randomItemClasses.remove('hidden');
-            randomItemClasses.add('flex');
+            randomItem.classList.remove('hidden');
+            randomItem.classList.add('flex');
         }
     };
 
     const clearSelection = ()=> {
         setItems([]);
         setRandom({});
-        randomItemClasses.remove('flex');
-        randomItemClasses.add('hidden');
+        randomItem.classList.remove('flex');
+        randomItem.classList.add('hidden');
     }
 
     return (
