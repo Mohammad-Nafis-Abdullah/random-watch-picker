@@ -32,7 +32,8 @@ const Cart = ({items,setItems}) => {
                 </div>
                 <div className='h-24 rounded-md shadow-md'>
                     <h4 className='text-center text-lg font-medium underline mb-2'>Randomly Picked Watch :</h4>
-                    <div className='h-12 px-4 justify-center items-center gap-4 rounded-lg bg-gray-900 hidden' id='random-item'>
+                    <div className='h-12 px-4 items-center gap-4 rounded-lg bg-gray-900 hidden' id='random-item'>
+                    <h5 className='font-medium text-lg text-white'>{items.indexOf(random)+1}.</h5>
                         <img className='max-w-[32px] max-h-8 rounded-full' src={random.image} alt="" />
                         <h5 className='font-medium text-lg text-white'>{random.name}</h5>
                     </div>
