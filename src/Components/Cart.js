@@ -1,7 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import CartItem from './CartItem';
 
-const Cart = ({items}) => {
+const Cart = ({items,setItems}) => {
+    const [random,setRandom] = useState({});
+    const randomItemClasses = document.getElementById('random-item').classList;
+
+    const randomPicker = ()=> {
+        if (items.length) {
+            const randomIndex = Math.floor(Math.random() * items.length) + 1;
+            setRandom(items[randomIndex-1]);
+            randomItemClasses.remove('hidden');
+            randomItemClasses.add('flex');
+        }
+    };
+
+    const clearSelection = ()=> {
+        setItems([]);
+        setRandom({});
+        randomItemClasses.remove('flex');
+        randomItemClasses.add('hidden');
+    }
 
     return (
         <section className='container mx-auto mt-4 z-0 grow basis-full xl:fixed xl:mt-[85px] xl:h-screen'>
@@ -13,14 +31,15 @@ const Cart = ({items}) => {
                     }
                 </div>
                 <div className='h-24 rounded-md shadow-md'>
-                    <h4 className='text-center text-lg font-medium underline'>Randomly Picked Watch :</h4>
-                    {
-                        
-                    }
+                    <h4 className='text-center text-lg font-medium underline mb-2'>Randomly Picked Watch :</h4>
+                    <div className='h-12 px-4 justify-center items-center gap-4 rounded-lg bg-gray-900 hidden' id='random-item'>
+                        <img className='max-w-[32px] max-h-8 rounded-full' src={random.image} alt="" />
+                        <h5 className='font-medium text-lg text-white'>{random.name}</h5>
+                    </div>
                 </div>
                 <div className='flex flex-col gap-3'>
-                    <button className='btn-pick hover:bg-teal-600 hover:border-0'>Random Picker</button>
-                    <button className='btn-pick hover:bg-red-600 hover:border-0'>Clear Selection</button>
+                    <button onClick={randomPicker} className='btn-pick hover:bg-teal-600 hover:border-0'>Random Picker</button>
+                    <button onClick={clearSelection} className='btn-pick hover:bg-red-600 hover:border-0'>Clear Selection</button>
                 </div>
             </div>
         </section>

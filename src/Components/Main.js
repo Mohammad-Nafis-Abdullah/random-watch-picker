@@ -26,7 +26,7 @@ const Main = () => {
             
             <Watches watches={watches} picker={picker}></Watches>
 
-            <Cart items={pick}></Cart>
+            <Cart items={pick} setItems={setPick}></Cart>
 
         </div>
     );
