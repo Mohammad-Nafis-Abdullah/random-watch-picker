@@ -10,13 +10,23 @@ const Main = () => {
         .then(data => setWatches(data))
     },[]);
 
+    const [pick,setPick] =useState([]);
+
+    const picker = (watch)=> {
+        if(pick.length<4){
+            pick.indexOf(watch)===-1?setPick([...pick,watch]):alert(`${watch.name} already selected`);
+        }
+        else{
+            alert(`Can't add more then 4 watches`);
+        }
+    }
 
     return (
         <div className='container mx-auto xl:grid grid-cols-4 flex flex-row flex-wrap-reverse'>
             
-            <Watches watches={watches}></Watches>
+            <Watches watches={watches} picker={picker}></Watches>
 
-            <Cart></Cart>
+            <Cart items={pick}></Cart>
 
         </div>
     );

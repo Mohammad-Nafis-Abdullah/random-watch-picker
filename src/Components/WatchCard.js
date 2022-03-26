@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckToSlot } from '@fortawesome/free-solid-svg-icons';
 
 
-const WatchCard = ({watch}) => {
+const WatchCard = ({watch,picker}) => {
     const {image,name,price} = watch;
 
     return (
@@ -12,7 +12,7 @@ const WatchCard = ({watch}) => {
             <img src={image} alt="" className='max-h-60'/>
             <h4 className='text-2xl font-medium text-center'>{name}</h4>
             <h5 className='text-xl font-medium text-center text-gray-700'>Price : ${price}</h5>
-            <button className='btn-pick'>Pick <FontAwesomeIcon icon={faCheckToSlot} size='lg'></FontAwesomeIcon></button>
+            <button className='btn-pick' onClick={()=> picker(watch)}>Pick <FontAwesomeIcon icon={faCheckToSlot} size='lg'></FontAwesomeIcon></button>
 
         </div>
     );
