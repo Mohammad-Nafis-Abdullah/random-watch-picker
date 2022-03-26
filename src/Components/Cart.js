@@ -22,7 +22,7 @@ const Cart = ({items,setItems}) => {
     }
 
     return (
-        <section className='container mx-auto mt-4 z-0 grow basis-full xl:fixed xl:mt-[85px] xl:h-screen'>
+        <section className='container mx-auto mt-4 z-0 grow basis-full xl:fixed xl:mt-[85px] xl:h-screen bg-white'>
             <div className='border-4 border-black rounded-md mx-auto max-w-[380px] py-3 px-3 flex flex-col xl:mx-0 xl:ml-auto gap-3'>
                 <div className='flex flex-col gap-1 shadow-md h-56'>
                     <h4 className='text-center font-medium text-xl underline'>Selected Watch</h4>
